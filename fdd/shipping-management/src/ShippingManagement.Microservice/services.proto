@@ -1,0 +1,13 @@
+syntax = "proto3";
+package Northwind.ShippingManagement;
+import "protobuf-net/bcl.proto"; // schema for protobuf-net's handling of core .NET types
+
+message CalculateRequest {
+   string Country = 1;
+}
+message CalculateResponse {
+   .bcl.Decimal Rate = 1;
+}
+service FreightCalculatorService {
+   rpc Calculate (CalculateRequest) returns (CalculateResponse);
+}

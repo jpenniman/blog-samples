@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>grpc.client</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
+        <PackageReference Include="Polly" Version="7.2.3" />
+        <PackageReference Include="protobuf-net.Grpc.ClientFactory " Version="1.0.152" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ShippingManagement.Api\ShippingManagement.Api.csproj" />
+      <ProjectReference Include="..\ShippingManagement.Grpc.Sdk\ShippingManagement.Grpc.Sdk.csproj" />
+    </ItemGroup>
+</Project>

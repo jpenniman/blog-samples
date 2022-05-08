@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RootNamespace>Northwind.CustomerManagement</RootNamespace>
+    <AssemblyName>Northwind.CustomerManagement</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.1" />
+    <PackageReference Include="EFCore.NamingConventions" Version="6.0.0" />
+    <PackageReference Include="System.Reactive" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\foundation\src\Northwind.Foundation\Northwind.Foundation.csproj" />
+    <ProjectReference Include="..\CustomerManagement.Api\CustomerManagement.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataMaintenance" />
+    <Folder Include="Search\Repository\Impl" />
+  </ItemGroup>
+
+</Project>

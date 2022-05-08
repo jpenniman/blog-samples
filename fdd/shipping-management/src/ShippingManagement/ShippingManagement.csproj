@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Northwind.ShippingManagement</AssemblyName>
+        <RootNamespace>Northwind.ShippingManagement</RootNamespace>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.1" />
+        <PackageReference Include="EFCore.NamingConventions" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+        <PackageReference Include="System.Reactive" Version="5.0.0" />
+        <PackageReference Include="HotChocolate.Abstractions" Version="12.4.1" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\ShippingManagement.Api\ShippingManagement.Api.csproj" />
+    </ItemGroup>
+
+</Project>

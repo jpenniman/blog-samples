@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Northwind.ShippingManagement.Grpc.Server</AssemblyName>
+        <RootNamespace>Northwind.ShippingManagement.Grpc.Server</RootNamespace>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
+        <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.152" />
+        <PackageReference Include="protobuf-net.Grpc.Reflection" Version="1.0.152" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ShippingManagement\ShippingManagement.csproj" />
+      <ProjectReference Include="..\ShippingManagement.Grpc.Sdk\ShippingManagement.Grpc.Sdk.csproj" />
+    </ItemGroup>
+</Project>
