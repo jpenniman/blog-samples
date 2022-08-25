@@ -1,0 +1,14 @@
+﻿{
+  "profiles": {
+    "IEnumerableYield": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7086",
+      "launchUrl": "https://localhost:7086/api/people",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
