@@ -1,4 +1,5 @@
 ﻿using System.ServiceModel;
+using CustomerManagement.Search.Api;
 
 namespace CustomerManagement.Search.Grpc.Sdk;
 

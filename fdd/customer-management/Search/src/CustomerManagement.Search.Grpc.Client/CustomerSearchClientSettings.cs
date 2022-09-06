@@ -1,4 +1,6 @@
-﻿namespace CustomerManagement.Search.Grpc.Client;
+﻿using JetBrains.Annotations;
+
+namespace CustomerManagement.Search.Grpc.Client;
 
 [PublicAPI]
 public sealed class CustomerSearchClientSettings

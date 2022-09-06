@@ -8,6 +8,10 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.1" />
+        <PackageReference Include="System.Linq.Async" Version="6.0.1" />
+        <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.152" />
+        <PackageReference Include="protobuf-net.Grpc.Reflection" Version="1.0.152" />
     </ItemGroup>
     
     <ItemGroup>

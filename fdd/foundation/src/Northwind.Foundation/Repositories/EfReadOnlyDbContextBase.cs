@@ -2,8 +2,11 @@
 
 namespace Northwind.Foundation.Repositories;
 
-public abstract class EfReadOnlyDbContextBase : DbContext
+public abstract class EfReadOnlyDbContextBase<TContext> : DbContext
+    where TContext : DbContext
 {
+    protected EfReadOnlyDbContextBase(DbContextOptions<TContext> options) : base(options)
+    {}
     static readonly string READ_ONLY_MESSAGE = "Saving is not allows in a readonly context.";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

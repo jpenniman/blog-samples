@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using CustomerManagement.Search.Api;
 using CustomerManagement.Search.Grpc.Client;
-using CustomerManagement.Search.Grpc.Sdk;
 using CustomerManagement.Search.Grpc.Server;
 using CustomerManagement.Search.Repositories.EntityFramework;
 using FluentAssertions;
@@ -76,7 +75,6 @@ public class SearchByCompanyName
         IAsyncEnumerable<CustomerSearchResult> results = search.FindByCompanyName("Acme");
         var countReturned = await results.CountAsync();
         countReturned.Should().Be(0);
-
         await cn.DisposeAsync();
         await container.DisposeAsync();
     }

@@ -11,8 +11,9 @@
         <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.152" />
         <PackageReference Include="protobuf-net.Grpc.Reflection" Version="1.0.152" />
     </ItemGroup>
+
     <ItemGroup>
-      <ProjectReference Include="..\CustomerManagement.Search.Grpc.Sdk\CustomerManagement.Search.Grpc.Sdk.csproj" />
+      <Folder Include="Services" />
     </ItemGroup>
 
 </Project>

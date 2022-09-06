@@ -5,5 +5,13 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-
+    
+    <ItemGroup>
+        <PackageReference Include="JetBrains.Annotations" Version="2022.1.0" />
+        <PackageReference Include="System.ServiceModel.Primitives" Version="4.9.0" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\foundation\src\Northwind.Foundation\Northwind.Foundation.csproj" />
+    </ItemGroup>
 </Project>

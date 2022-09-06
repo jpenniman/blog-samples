@@ -1,5 +1,6 @@
 ﻿using CustomerManagement.Search.Api;
 using CustomerManagement.Search.Repositories;
+using Northwind.Foundation;
 
 namespace CustomerManagement.Search.Services;
 
@@ -12,13 +13,19 @@ class CustomerSearchService : ICustomerSearch
         _searchRepository = searchRepository;
     }
 
-    public IAsyncEnumerable<CustomerSearchResult> FindByCompanyName(string companyName)
+    public async Task<CustomerSearchResponse> FindByCompanyNameAsync(CustomerSearchByCompanyNameRequest request)
     {
-        if (string.IsNullOrWhiteSpace(companyName))
-            throw new ArgumentException(
-                "A partial company name must be provided. If you need to retrieve a paged list of all customers, use the GetAll() method instead.",
-                nameof(companyName));
-        
-        return _searchRepository.FindByCompanyName(companyName);
+        if (!request.IsValid())
+            return new CustomerSearchResponse(request.Validate());
+
+        try
+        {
+            var results = await _searchRepository.FindByCompanyName(request.CompanyName).ToArrayAsync();
+            return new CustomerSearchResponse(results);
+        }
+        catch (Exception ex)
+        {
+            return new CustomerSearchResponse(new[] { new Error("FIND_ERROR", ex.Message) });
+        }
     }
 }

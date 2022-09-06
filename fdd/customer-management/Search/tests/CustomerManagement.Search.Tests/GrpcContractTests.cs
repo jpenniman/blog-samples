@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CustomerManagement.Search.Api;
+using CustomerManagement.Search.Grpc;
 using CustomerManagement.Search.Grpc.Client;
 using CustomerManagement.Search.Grpc.Sdk;
 using CustomerManagement.Search.Grpc.Server;

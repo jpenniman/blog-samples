@@ -1,4 +1,5 @@
 ﻿using System.Runtime.Serialization;
+using JetBrains.Annotations;
 
 namespace CustomerManagement.Search.Api;
 
@@ -9,9 +10,9 @@ namespace CustomerManagement.Search.Api;
 [DataContract]
 public sealed class CustomerSearchResult
 {
-    CustomerSearchResult()
-    {
-    }
+#pragma warning disable CS8618
+    CustomerSearchResult() {}
+#pragma warning restore CS8618
 
     internal CustomerSearchResult(long id, string companyName, string? phone = null, string? postalCode = null)
     {

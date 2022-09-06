@@ -31,8 +31,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\CustomerManagement.Search.Grpc.Client\CustomerManagement.Search.Grpc.Client.csproj" />
-      <ProjectReference Include="..\..\src\CustomerManagement.Search.Grpc.Server\CustomerManagement.Search.Grpc.Server.csproj" />
-      <ProjectReference Include="..\..\src\CustomerManagement.Search.Repositories.EntityFramework\CustomerManagement.Search.Repositories.EntityFramework.csproj" />
       <ProjectReference Include="..\..\src\CustomerManagement.Search\CustomerManagement.Search.csproj" />
     </ItemGroup>
 
