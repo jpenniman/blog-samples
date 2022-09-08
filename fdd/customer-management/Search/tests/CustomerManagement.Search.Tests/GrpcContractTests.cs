@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CustomerManagement.Search.Api;
 using CustomerManagement.Search.Grpc;
-using CustomerManagement.Search.Grpc.Client;
+using CustomerManagement.Search.Client;
 using CustomerManagement.Search.Grpc.Sdk;
 using CustomerManagement.Search.Grpc.Server;
 using CustomerManagement.Search.Repositories.EntityFramework;
@@ -41,13 +41,13 @@ public class GrpcContractTests : IDisposable
         _server.Dispose();
     }
     
-    static void Seed(CustomerSearchDbContext db)
-    {
-        db.Customers.Add(new Customer("Acme Corporation"));
-        db.Customers.Add(new Customer("Acme Limited"));
-        db.Customers.Add(new Customer("Widgets R Us"));
-        db.SaveChanges();
-    }
+    // static void Seed(CustomerSearchDbContext db)
+    // {
+    //     db.Customers.Add(new Customer("Acme Corporation"));
+    //     db.Customers.Add(new Customer("Acme Limited"));
+    //     db.Customers.Add(new Customer("Widgets R Us"));
+    //     db.SaveChanges();
+    // }
 
     static TestServer InitializeTestServer()
     {

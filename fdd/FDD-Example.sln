@@ -59,7 +59,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagement.Search.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagement.Search", "customer-management\Search\src\CustomerManagement.Search\CustomerManagement.Search.csproj", "{949A8490-DEAC-44D4-9BBE-9AB9E6C9D4F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagement.Search.Grpc.Client", "customer-management\Search\src\CustomerManagement.Search.Grpc.Client\CustomerManagement.Search.Grpc.Client.csproj", "{478D6D14-F86E-484C-883E-6C34391292C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagement.Search.Client", "customer-management\Search\src\CustomerManagement.Search.Client\CustomerManagement.Search.Client.csproj", "{478D6D14-F86E-484C-883E-6C34391292C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagement.Search.Tests", "customer-management\Search\tests\CustomerManagement.Search.Tests\CustomerManagement.Search.Tests.csproj", "{BA51FB38-540B-402D-BE54-E291CA2790CE}"
 EndProject

@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Polly;
 using ProtoBuf.Grpc.ClientFactory;
 
-namespace CustomerManagement.Search.Grpc.Client;
+namespace CustomerManagement.Search.Client;
 
 public static class ServiceCollectionExtensions
 {

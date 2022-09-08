@@ -1,5 +1,4 @@
 ﻿using System.Runtime.Serialization;
-using JetBrains.Annotations;
 
 namespace CustomerManagement.Search.Api;
 

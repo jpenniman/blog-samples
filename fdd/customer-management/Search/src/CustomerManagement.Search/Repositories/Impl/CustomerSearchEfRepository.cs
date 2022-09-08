@@ -1,11 +1,10 @@
 using CustomerManagement.Search.Api;
-using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Northwind.Foundation.Repositories;
 
 namespace CustomerManagement.Search.Repositories.Impl;
 
-public class CustomerSearchEfRepository 
+class CustomerSearchEfRepository 
     : EfReadOnlyDbContextBase<CustomerSearchEfRepository>, 
         ICustomerSearchRepository
 {

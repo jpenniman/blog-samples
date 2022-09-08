@@ -1,10 +1,7 @@
-﻿using CustomerManagement.Search.Api;
-using CustomerManagement.Search.Services;
+﻿using CustomerManagement.Search.Services;
 using Microsoft.AspNetCore.Builder;
-using ProtoBuf.Grpc.Reflection;
-using ProtoBuf.Meta;
 
-namespace CustomerManagement.Search.Grpc;
+namespace CustomerManagement.Search;
 
 public static class ApplicationBuilderExtensions
 {

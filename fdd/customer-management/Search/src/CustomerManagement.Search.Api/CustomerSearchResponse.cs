@@ -1,5 +1,4 @@
 ﻿using System.Runtime.Serialization;
-using JetBrains.Annotations;
 using Northwind.Foundation;
 
 namespace CustomerManagement.Search.Api;

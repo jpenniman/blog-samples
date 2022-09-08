@@ -1,12 +1,8 @@
-﻿using CustomerManagement.Search.Api;
-using CustomerManagement.Search.Repositories;
+﻿using CustomerManagement.Search.Repositories;
 using CustomerManagement.Search.Repositories.Impl;
-using CustomerManagement.Search.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ProtoBuf.Grpc.Server;
-
-//using Northwind.CustomerManagement.Services.Impl;
 
 namespace CustomerManagement.Search;
 
@@ -19,6 +15,7 @@ public static class ServiceCollectionExtensions
     /// Adds CustomerSearch functionality to the system.
     /// </summary>
     /// <param name="services"></param>
+    /// <param name="options"></param>
     /// <returns></returns>
     public static IServiceCollection AddCustomerSearch(this IServiceCollection services, Action<DbContextOptionsBuilder> options)
     {

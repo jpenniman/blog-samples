@@ -30,7 +30,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\CustomerManagement.Search.Grpc.Client\CustomerManagement.Search.Grpc.Client.csproj" />
+      <ProjectReference Include="..\..\src\CustomerManagement.Search.Client\CustomerManagement.Search.Client.csproj" />
       <ProjectReference Include="..\..\src\CustomerManagement.Search\CustomerManagement.Search.csproj" />
     </ItemGroup>
 
