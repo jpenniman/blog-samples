@@ -8,6 +8,7 @@
         <AssemblyName>Northwind.CustomerManagement.Microservice</AssemblyName>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'Northwind.CustomerManagement.ServiceHost' " />
     <ItemGroup>
         <PackageReference Include="HotChocolate.AspNetCore" Version="12.4.1" />
         <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />

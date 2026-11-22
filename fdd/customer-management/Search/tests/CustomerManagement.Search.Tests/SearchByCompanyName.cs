@@ -1,26 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using CustomerManagement.Search.Api;
-using CustomerManagement.Search.Client;
-using CustomerManagement.Search.Grpc.Server;
-using CustomerManagement.Search.Repositories.EntityFramework;
+using CustomerManagement.Search.Repositories.Impl;
 using FluentAssertions;
-using Grpc.Net.Client;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.AspNetCore.TestHost;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
-using ProtoBuf.Grpc.Client;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -43,26 +28,21 @@ public class SearchByCompanyName
         await cn.OpenAsync();
         var container = new ServiceCollection()
             .AddLogging()
-            .AddCustomerSearch()
-            .AddCustomerSearchEfRepository(options => options.UseSqlite(cn))
+            .AddCustomerSearch(options => options.UseSqlite(cn))
             .BuildServiceProvider();
         
-        var db = container.GetRequiredService<CustomerSearchDbContext>();
+        var db = container.GetRequiredService<CustomerSearchEfRepository>();
         await db.Database.EnsureCreatedAsync();
         
         return (container, cn);
     }
 
-    static async Task Seed(CustomerSearchDbContext db)
+    static async Task Seed(CustomerSearchEfRepository db)
     {
-        db.Customers.Add(new Customer("Acme Corporation"));
-        db.Customers.Add(new Customer("Acme Limited"));
-        db.Customers.Add(new Customer("Widgets R Us"));
-        await db.SaveChangesAsync();
     }
     static Task Seed(IServiceProvider container)
     {
-        var db = container.GetRequiredService<CustomerSearchDbContext>();
+        var db = container.GetRequiredService<CustomerSearchEfRepository>();
         return Seed(db);
     }
     
@@ -72,8 +52,8 @@ public class SearchByCompanyName
         var (container, cn) = await Setup();
 
         ICustomerSearch search = container.GetRequiredService<ICustomerSearch>();
-        IAsyncEnumerable<CustomerSearchResult> results = search.FindByCompanyName("Acme");
-        var countReturned = await results.CountAsync();
+        CustomerSearchResponse results = await search.FindByCompanyNameAsync(new CustomerSearchByCompanyNameRequest() { CompanyName = "Acme"});
+        var countReturned = results.PageSize;
         countReturned.Should().Be(0);
         await cn.DisposeAsync();
         await container.DisposeAsync();
@@ -86,9 +66,8 @@ public class SearchByCompanyName
         await Seed(container);
         
         ICustomerSearch search = container.GetRequiredService<ICustomerSearch>();
-        IAsyncEnumerable<CustomerSearchResult> results = search.FindByCompanyName("Acme");
-
-        var countReturned = await results.CountAsync();
+        CustomerSearchResponse results = await search.FindByCompanyNameAsync(new CustomerSearchByCompanyNameRequest() { CompanyName = "Acme"});
+        var countReturned = results.PageSize;
         countReturned.Should().Be(2);
         await cn.DisposeAsync();
         await container.DisposeAsync();

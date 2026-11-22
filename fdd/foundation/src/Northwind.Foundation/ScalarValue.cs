@@ -20,7 +20,7 @@ public abstract class ScalarValue<T> : IEquatable<ScalarValue<T>>, ISerializable
         return Equals((ScalarValue<T>)obj);
     }
 
-    public bool Equals(ScalarValue<T> other)
+    public bool Equals(ScalarValue<T>? other)
     {
         if (ReferenceEquals(null, other)) return false;
         if (ReferenceEquals(this, other)) return true;

@@ -351,3 +351,6 @@ MigrationBackup/
 
 # Rider
 .idea
+
+# MacOS garbage
+**/.DS_Store

@@ -7,6 +7,10 @@ namespace CustomerManagement.Search.Api;
 [DataContract]
 public sealed class CustomerSearchResponse : PagedResponseBase<CustomerSearchResult>
 {
+    CustomerSearchResponse()
+    {
+        // For serializers
+    }
     internal CustomerSearchResponse(IReadOnlyCollection<CustomerSearchResult> results)
     {
         Data = results;

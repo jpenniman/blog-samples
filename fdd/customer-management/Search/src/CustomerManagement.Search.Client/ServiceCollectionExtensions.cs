@@ -8,7 +8,7 @@ namespace CustomerManagement.Search.Client;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddCustomerManagementSearchGrpcClient(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddCustomerManagementSearchClient(this IServiceCollection services, IConfiguration configuration)
     {
         var customerSearchServiceClientSettings = new CustomerSearchClientSettings();
         configuration.Bind(CustomerSearchClientSettings.SECTION_NAME, customerSearchServiceClientSettings);
